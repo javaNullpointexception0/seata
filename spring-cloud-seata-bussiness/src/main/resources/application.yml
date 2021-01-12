@@ -1,0 +1,31 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: spring-cloud-seata-business
+  #需要加入数据库连接，否则无法将信息录入undo_log表
+  datasource:
+    url: jdbc:mysql://localhost:3306/seata
+    username: root
+    password: mysqlAdmin
+    driver-class-name: com.mysql.jdbc.Driver
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+seata:
+  registry:
+    eureka:
+    service-url: http://${eureka.instance.hostname}:8761/eureka/
+    type: eureka
+  enabled: true
+  #事务分组名称
+  tx-service-group: my_test_tx_group
+  service:
+    vgroupMapping:
+      #事务分组名称对应seata-server在服务注册中心的服务名
+      my_test_tx_group: SEATA-SERVER
+  application-id: spring-cloud-seata-business

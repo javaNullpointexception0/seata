@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.lzj</groupId>
-    <artifactId>spring-clound-seata-order</artifactId>
+    <artifactId>spring-cloud-seata-bussiness</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-clound-seata-order</name>
+    <name>spring-cloud-seata-bussiness</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -28,7 +28,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
@@ -44,11 +43,7 @@
             <artifactId>druid</artifactId>
             <version>1.0.31</version>
         </dependency>
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>1.3.0</version>
-        </dependency>
+
         <!--seata-->
         <dependency>
             <groupId>io.seata</groupId>
@@ -85,14 +80,6 @@
     </build>
 
     <repositories>
-        <repository>
-            <id>spring-snapshots</id>
-            <name>Spring Snapshots</name>
-            <url>https://repo.spring.io/snapshot</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
         <repository>
             <id>spring-milestones</id>
             <name>Spring Milestones</name>

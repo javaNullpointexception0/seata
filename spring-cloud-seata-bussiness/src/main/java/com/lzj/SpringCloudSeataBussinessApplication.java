@@ -8,10 +8,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients
-public class SpringCloundSeataOrderApplication {
+public class SpringCloudSeataBussinessApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringCloundSeataOrderApplication.class, args);
+        SpringApplication.run(SpringCloudSeataBussinessApplication.class, args);
     }
 
 }
