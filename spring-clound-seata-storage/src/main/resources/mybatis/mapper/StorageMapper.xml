@@ -4,7 +4,19 @@
 
 <mapper namespace="com.lzj.mapper.StorageMapper">
 	<update id="deduct">
-		update tb_storage set count = count - #{count} where commodity_code = #{commodityCode};
+		update tb_storage set count = count - #{count} where commodity_code = #{commodityCode}
+	</update>
+
+	<update id="tryDeduct">
+		update tb_storage set count = count - #{count}, occupy_count=occupy_count + #{count} where commodity_code = #{commodityCode}
+	</update>
+
+	<update id="confirmDeduct">
+		update tb_storage set occupy_count=occupy_count - #{count} where commodity_code = #{commodityCode}
+	</update>
+
+	<update id="cancelDeduct">
+		update tb_storage set count = count + #{count}, occupy_count=occupy_count - #{count} where commodity_code = #{commodityCode}
 	</update>
 </mapper>
  

@@ -6,6 +6,18 @@
 	<update id="decrease">
 		update tb_account set money = money - ${money} where user_id = #{userId};
 	</update>
+
+	<update id="tryDecrease">
+		update tb_account set money = money - ${money}, locked_money = locked_money + ${money} where user_id = #{userId};
+	</update>
+
+	<update id="confirmDecrease">
+		update tb_account set locked_money = locked_money - ${money} where user_id = #{userId};
+	</update>
+
+	<update id="cancelDecrease">
+		update tb_account set money = money + ${money}, locked_money = locked_money - ${money} where user_id = #{userId};
+	</update>
 </mapper>
  
 

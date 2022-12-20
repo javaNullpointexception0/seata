@@ -1,8 +1,10 @@
 package com.lzj.entity;
 
 
-public class Order {
+import com.baomidou.mybatisplus.annotation.TableName;
 
+@TableName(value = "tb_order")
+public class Order {
     private Integer id;
     private String userId;
     private String commodityCode;

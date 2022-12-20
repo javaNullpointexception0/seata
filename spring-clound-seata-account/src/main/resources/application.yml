@@ -8,10 +8,16 @@ spring:
     username: root
     password: mysqlAdmin
     driver-class-name: com.mysql.jdbc.Driver
-mybatis:
+#使用mybatis时使用该配置
+#mybatis:
+#  mapper-locations:
+#    - classpath:mybatis/mapper/**/*.xml
+#  config-location: classpath:mybatis/mybatis.cfg.xml
+
+#引mybatis-plus使用该配置
+mybatis-plus:
   mapper-locations:
-  - classpath:mybatis/mapper/**/*.xml
-  config-location: classpath:mybatis/mybatis.cfg.xml
+    - classpath:mybatis/mapper/**/*.xml
 eureka:
   instance:
     hostname: localhost

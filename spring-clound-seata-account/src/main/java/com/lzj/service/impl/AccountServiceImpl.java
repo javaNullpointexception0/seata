@@ -14,8 +14,6 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public void decrease(String userId, int money) throws Exception {
-        String xid = RootContext.getXID();
-        int result = Integer.parseInt(xid);
         mapper.decrease(userId, money);
     }
 }

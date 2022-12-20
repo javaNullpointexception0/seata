@@ -1,12 +1,13 @@
 package com.lzj.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.lzj.entity.Order;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface OrderMapper {
+public interface OrderMapper extends BaseMapper<Order> {
 
-    public int insert(Order order);
+    int insert(Order order);
 
-    public int update(Integer id, Integer status);
+    int update(Integer id, Integer status);
 }

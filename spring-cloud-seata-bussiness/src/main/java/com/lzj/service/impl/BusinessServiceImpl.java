@@ -37,4 +37,20 @@ public class BusinessServiceImpl implements BusinessService {
         //更新订单
         orderService.update(orderId, 1);
     }
+
+    @Override
+    @GlobalTransactional(name = "SEATA-SERVER-TCC", rollbackFor = Exception.class)
+    public void createOrderInTcc(String userId, String commodityCode, int orderCount) {
+        //生成订单
+        Order order = new Order();
+        order.setUserId(userId);
+        order.setCommodityCode(commodityCode);
+        order.setCount(orderCount);
+        order.setMoney(orderCount * 10);
+        Integer orderId = orderService.create(order);
+        //扣减库存
+        storageService.deduct(commodityCode, orderCount);
+        //扣减账号余额
+        accountService.decrease(userId, order.getMoney());
+    }
 }

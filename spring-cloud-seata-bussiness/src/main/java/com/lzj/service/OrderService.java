@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface OrderService {
 
     @PostMapping("/order/create")
-    public Integer create(Order order);
+    Integer create(Order order);
 
     @PutMapping("/order/update")
-    public void update(@RequestParam("id") Integer id, @RequestParam("status") Integer status);
+    void update(@RequestParam("id") Integer id, @RequestParam("status") Integer status);
 }

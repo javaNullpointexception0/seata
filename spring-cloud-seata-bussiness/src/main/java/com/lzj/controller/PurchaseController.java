@@ -17,4 +17,10 @@ public class PurchaseController {
         bussinessService.purchase(userId, commodityCode, orderCount);
         return "下单成功！";
     }
+
+    @RequestMapping("createOrderInTcc")
+    public String createOrderInTcc(String userId, String commodityCode, int orderCount) {
+        bussinessService.createOrderInTcc(userId, commodityCode, orderCount);
+        return "下单成功！";
+    }
 }

@@ -14,7 +14,6 @@ public class StorageServiceImpl implements StorageService {
 
     @Override
     public void deduct(String commodityCode, int count) {
-        String xid = RootContext.getXID();
         storageMapper.deduct(commodityCode, count);
     }
 }
